@@ -158,37 +158,25 @@
         color: rgba(10, 123, 204, 1);
         white-space: pre-wrap;
       }
-      
-        .file-list-container1 {
-            box-sizing: border-box;
-            width: 100%;
-            height: 287px;
-            margin-top: 18px;
-            background: rgba(217, 217, 217, 1);
-            border-radius: 15px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-            padding: 20px;
-        }
-        .recent-book {
-            border-radius: 8px;
-            background-color: #ffffff;
-            padding: 10px;
-            text-align: center;
-        }
-        .recent-book img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .recent-book p {
-            margin: 0;
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-        }
+      .file-list-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+  .recent-book {
+    flex: 0 0 calc(50% - 15px);
+    margin-right: 15px;
+    margin-bottom: 15px;
+    overflow: hidden; /* Para ocultar cualquier desbordamiento */
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .recent-book img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Establecer un ancho máximo para la imagen */
+    display: block;
+  }
       .navigation-bar {
         display: flex;
         flex: 0 0 auto;
@@ -341,38 +329,30 @@
       </div>
     </div>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
-          .then(response => response.json())
-          .then(data => {
-            const recentBooksContainer = document.getElementById("recentBooksContainer");
-            recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
+document.addEventListener("DOMContentLoaded", function() {
+  fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
+    .then(response => response.json())
+    .then(data => {
+      const recentBooksContainer = document.getElementById("recentBooksContainer");
+      recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
 
-            const recentBooks = data.slice(-6);
-            recentBooks.forEach(book => {
-              const div = document.createElement("div");
-              div.classList.add("recent-book");
+      const recentBooks = data.slice(-6);
+      recentBooks.forEach(book => {
+        const div = document.createElement("div");
+        div.classList.add("recent-book");
 
-              const img = document.createElement("img");
-              img.src = book[2]; // URL de la portada del libro
-              img.alt = `${book[0]} - ${book[1]}`;
-              div.appendChild(img);
+        const img = document.createElement("img");
+        img.src = book[2]; // URL de la portada del libro
+        img.alt = `${book[0]} - ${book[1]}`;
+        div.appendChild(img);
 
-              const title = document.createElement("p");
-              title.textContent = book[0];
-              div.appendChild(title);
-
-              const author = document.createElement("p");
-              author.textContent = book[1];
-              div.appendChild(author);
-
-              recentBooksContainer.appendChild(div);
-            });
-          })
-          .catch(error => {
-            console.error("Error fetching recent books:", error);
-          });
+        recentBooksContainer.appendChild(div);
       });
-    </script>
+    })
+    .catch(error => {
+      console.error("Error fetching recent books:", error);
+    });
+});
+</script>
   </body>
 </html>
