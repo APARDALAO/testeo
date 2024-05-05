@@ -155,12 +155,36 @@
         border-radius: 10px;
       }
       .search-container2 {
-        box-sizing: border-box;
-        flex: 0 0 auto;
-        height: 397px;
-        background: rgba(217, 217, 217, 1);
-        border-radius: 10px;
-      }
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    height: 397px;
+    background: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+    overflow: hidden; /* Para ocultar contenido que se sale del contenedor */
+  }
+
+  #bookList.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    overflow: auto; /* Agregar barras de desplazamiento si el contenido excede el tamaño del contenedor */
+  }
+
+  .book {
+    text-align: center;
+  }
+
+  .book img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .book-title,
+  .book-author {
+    margin: 5px 0;
+  }
       .navigation-bar {
     background: #fff;
     position: fixed;
