@@ -158,14 +158,37 @@
         color: rgba(10, 123, 204, 1);
         white-space: pre-wrap;
       }
-      .file-list-container1 {
-        box-sizing: border-box;
-        width: 100%;
-        height: 287px;
-        margin-top: 18px;
-        background: rgba(217, 217, 217, 1);
-        border-radius: 15px;
-      }
+      
+        .file-list-container1 {
+            box-sizing: border-box;
+            width: 100%;
+            height: 287px;
+            margin-top: 18px;
+            background: rgba(217, 217, 217, 1);
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .recent-book {
+            border-radius: 8px;
+            background-color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+        .recent-book img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .recent-book p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
       .navigation-bar {
         display: flex;
         flex: 0 0 auto;
@@ -270,7 +293,7 @@
               <p class="recent-files-heading">Recent Files</p>
               <p class="recent-files-link">See All</p>
             </div>
-            <div class="file-list-container1"></div>
+            <div class="file-list-container1" id="recentBooksContainer"></div>
           </div>
           <div class="navigation-bar">
             <div class="vertical-flexbox-menu-item">
@@ -318,7 +341,7 @@
       </div>
     </div>
   </body>
-  <script>
+      <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Obtener y mostrar los libros existentes
             fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
@@ -327,6 +350,7 @@
                     const bookList = document.getElementById("bookList");
                     bookList.innerHTML = ""; // Limpiar la lista antes de agregar los libros
 
+                    // Agregar libros existentes
                     data.forEach(book => {
                         const div = document.createElement("div");
                         div.classList.add("book");
@@ -341,17 +365,38 @@
                         title.textContent = book[0];
                         div.appendChild(title);
 
-                        const sectionNumber = document.createElement("span");
-                        sectionNumber.classList.add("section-number");
-                        sectionNumber.textContent = book[3]; // Número de sección
-                        div.appendChild(sectionNumber);
-
                         const author = document.createElement("p");
                         author.classList.add("book-author");
                         author.textContent = book[1];
                         div.appendChild(author);
 
                         bookList.appendChild(div);
+                    });
+
+                    // Agregar libros recientes
+                    const recentBooksContainer = document.getElementById("recentBooksContainer");
+                    recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
+
+                    // Obtener los 6 libros más recientes
+                    const recentBooks = data.slice(-6);
+                    recentBooks.forEach(book => {
+                        const div = document.createElement("div");
+                        div.classList.add("recent-book");
+
+                        const img = document.createElement("img");
+                        img.src = book[2]; // URL de la portada del libro
+                        img.alt = `${book[0]} - ${book[1]}`;
+                        div.appendChild(img);
+
+                        const title = document.createElement("p");
+                        title.textContent = book[0];
+                        div.appendChild(title);
+
+                        const author = document.createElement("p");
+                        author.textContent = book[1];
+                        div.appendChild(author);
+
+                        recentBooksContainer.appendChild(div);
                     });
                 })
                 .catch(error => {
@@ -431,4 +476,5 @@
             });
         });
     </script>
+
 </html>
