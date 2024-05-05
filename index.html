@@ -160,13 +160,16 @@
       }
       .file-list-container1 {
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 15px;
+    overflow-x: auto; /* Para permitir desplazamiento horizontal si los libros no caben en la pantalla */
+    -ms-overflow-style: none; /* Para IE y Edge */
+    scrollbar-width: none; /* Para Firefox */
+  }
+  .file-list-container1::-webkit-scrollbar {
+    display: none; /* Ocultar la barra de desplazamiento en WebKit (Chrome, Safari, etc.) */
   }
   .recent-book {
-    flex: 0 0 calc(50% - 15px);
-    margin-right: 15px;
-    margin-bottom: 15px;
+    flex: 0 0 calc(33.33% - 10px);
+    margin-right: 10px;
     overflow: hidden; /* Para ocultar cualquier desbordamiento */
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -336,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const recentBooksContainer = document.getElementById("recentBooksContainer");
       recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
 
-      const recentBooks = data.slice(-6);
+      const recentBooks = data.slice(-3); // Mostrar solo los tres libros más recientes
       recentBooks.forEach(book => {
         const div = document.createElement("div");
         div.classList.add("recent-book");
