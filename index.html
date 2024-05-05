@@ -94,46 +94,36 @@
       .search-container {
   box-sizing: border-box;
   display: flex;
-  flex: 0 0 auto;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: center; /* Centra verticalmente */
   height: 40px;
   margin-top: 23px;
   background: rgba(236, 236, 236, 1);
   border-radius: 12px;
-  padding-left: 12px; /* Ajusta el padding izquierdo para el icono */
+  padding: 0 12px; /* Ajusta el padding horizontal */
 }
 
 .svg-container {
-  display: flex;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  color: rgba(156, 163, 175, 1);
+  margin-right: 9px; /* Ajusta el margen derecho */
 }
 
 .search-input {
-  flex: 1; /* El input ocupará todo el espacio restante */
-  margin-left: 9px; /* Ajusta el margen izquierdo */
+  flex: 1;
   font: 400 13px/15.5px Inter, sans-serif;
   color: rgba(156, 163, 175, 1);
-  background: transparent; /* Fondo transparente */
-  border: none; /* Sin borde */
-  outline: none; /* Sin contorno al enfocar */
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center; /* Centra horizontalmente el texto */
 }
 
 .search-input::placeholder {
-  color: rgba(156, 163, 175, 1); /* Color del texto de marcador de posición */
+  text-align: center; /* Centra horizontalmente el marcador de posición */
+  color: rgba(156, 163, 175, 1);
 }
 
-      .svg-container {
-        display: flex;
-        flex: 0 0 auto;
-        width: 24px;
-        height: 24px;
-        color: rgba(156, 163, 175, 1);
-      }
       .search-prompt-text-style {
         flex: 0 0 auto;
         margin-left: 9px;
