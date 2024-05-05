@@ -361,6 +361,22 @@ document.addEventListener("DOMContentLoaded", function() {
       console.error("Error fetching recent books:", error);
     });
 });
+// Obtener todas las portadas de libros
+const portadas = document.querySelectorAll('.portada');
+
+// Encontrar el tamaño de la portada más pequeña
+let minWidth = Infinity;
+portadas.forEach(portada => {
+    const width = portada.clientWidth;
+    if (width < minWidth) {
+        minWidth = width;
+    }
+});
+
+// Aplicar el tamaño de la portada más pequeña a todas las portadas
+portadas.forEach(portada => {
+    portada.style.width = `${minWidth}px`;
+});
 </script>
   </body>
 </html>
