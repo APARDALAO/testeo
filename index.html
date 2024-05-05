@@ -344,7 +344,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const recentBooksContainer = document.getElementById("recentBooksContainer");
       recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
 
-      const recentBooks = data.slice(-6); // Mostrar solo los tres libros más recientes
+      const recentBooks = data.slice(-3); // Mostrar solo los tres libros más recientes
       recentBooks.forEach(book => {
         const div = document.createElement("div");
         div.classList.add("recent-book");
@@ -352,31 +352,34 @@ document.addEventListener("DOMContentLoaded", function() {
         const img = document.createElement("img");
         img.src = book[2]; // URL de la portada del libro
         img.alt = `${book[0]} - ${book[1]}`;
+        img.classList.add("portada"); // Agregar clase para identificar las portadas
         div.appendChild(img);
 
         recentBooksContainer.appendChild(div);
+      });
+
+      // Obtener todas las portadas de libros
+      const portadas = document.querySelectorAll('.portada');
+
+      // Encontrar el tamaño de la portada más pequeña
+      let minWidth = Infinity;
+      portadas.forEach(portada => {
+          const width = portada.clientWidth;
+          if (width < minWidth) {
+              minWidth = width;
+          }
+      });
+
+      // Aplicar el tamaño de la portada más pequeña a todas las portadas
+      portadas.forEach(portada => {
+          portada.style.width = `${minWidth}px`;
       });
     })
     .catch(error => {
       console.error("Error fetching recent books:", error);
     });
 });
-// Obtener todas las portadas de libros
-const portadas = document.querySelectorAll('.portada');
 
-// Encontrar el tamaño de la portada más pequeña
-let minWidth = Infinity;
-portadas.forEach(portada => {
-    const width = portada.clientWidth;
-    if (width < minWidth) {
-        minWidth = width;
-    }
-});
-
-// Aplicar el tamaño de la portada más pequeña a todas las portadas
-portadas.forEach(portada => {
-    portada.style.width = `${minWidth}px`;
-});
 </script>
   </body>
 </html>
