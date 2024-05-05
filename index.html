@@ -349,17 +349,31 @@
       recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
 
       const recentBooks = data.slice(-6); // Mostrar solo los tres libros más recientes
+      
+      // Encontrar el tamaño de la portada más pequeña
+      let minWidth = Infinity;
       recentBooks.forEach(book => {
-        const div = document.createElement("div");
-        div.classList.add("recent-book");
-
-        const img = document.createElement("img");
+        const img = new Image();
         img.src = book[2]; // URL de la portada del libro
-        img.alt = `${book[0]} - ${book[1]}`;
-        img.classList.add("portada"); // Agregar la clase "portada" a la imagen
-        div.appendChild(img);
-
-        recentBooksContainer.appendChild(div);
+        img.onload = function() {
+          const width = img.width;
+          if (width < minWidth) {
+            minWidth = width;
+          }
+          // Crear el div del libro reciente y establecer su ancho
+          const div = document.createElement("div");
+          div.classList.add("recent-book");
+          div.style.width = `${minWidth}px`;
+          
+          // Crear la imagen del libro reciente
+          const imgElement = document.createElement("img");
+          imgElement.src = book[2]; // URL de la portada del libro
+          imgElement.alt = `${book[0]} - ${book[1]}`;
+          div.appendChild(imgElement);
+          
+          // Agregar el libro reciente al contenedor
+          recentBooksContainer.appendChild(div);
+        };
       });
     })
     .catch(error => {
@@ -367,9 +381,6 @@
     });
 });
 
-
-// Obtener todas las imágenes de portada
-const portadas = document.querySelectorAll('.portada');
 
 
 </script>
