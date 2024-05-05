@@ -94,35 +94,39 @@
       .search-container {
   box-sizing: border-box;
   display: flex;
-  align-items: center; /* Centra verticalmente */
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   height: 40px;
   margin-top: 23px;
   background: rgba(236, 236, 236, 1);
   border-radius: 12px;
-  padding: 0 12px; /* Ajusta el padding horizontal */
+  padding-left: 12px; /* Ajusta el padding izquierdo para el icono */
 }
 
 .svg-container {
+  display: flex;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  margin-right: 9px; /* Ajusta el margen derecho */
+  color: rgba(156, 163, 175, 1);
 }
 
 .search-input {
-  flex: 1;
+  flex: 1; /* El input ocupará todo el espacio restante */
+  margin-left: 9px; /* Ajusta el margen izquierdo */
   font: 400 13px/15.5px Inter, sans-serif;
   color: rgba(156, 163, 175, 1);
-  background: transparent;
-  border: none;
-  outline: none;
-  text-align: center; /* Centra horizontalmente el texto */
+  background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno al enfocar */
 }
 
 .search-input::placeholder {
-  text-align: center; /* Centra horizontalmente el marcador de posición */
-  color: rgba(156, 163, 175, 1);
+  color: rgba(156, 163, 175, 1); /* Color del texto de marcador de posición */
 }
+
 
       .search-prompt-text-style {
         flex: 0 0 auto;
