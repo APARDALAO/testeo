@@ -350,30 +350,20 @@
 
       const recentBooks = data.slice(-6); // Mostrar solo los tres libros más recientes
       
-      // Encontrar el tamaño de la portada más pequeña
-      let minHeight = Infinity;
+      // Crear el div del libro reciente y establecer su tamaño estándar
       recentBooks.forEach(book => {
-        const img = new Image();
-        img.src = book[2]; // URL de la portada del libro
-        img.onload = function() {
-          const height = img.height;
-          if (height < minHeight) {
-            minHeight = height;
-          }
-          // Crear el div del libro reciente y establecer su alto
-          const div = document.createElement("div");
-          div.classList.add("recent-book");
-          div.style.height = `${minHeight}px`;
-          
-          // Crear la imagen del libro reciente
-          const imgElement = document.createElement("img");
-          imgElement.src = book[2]; // URL de la portada del libro
-          imgElement.alt = `${book[0]} - ${book[1]}`;
-          div.appendChild(imgElement);
-          
-          // Agregar el libro reciente al contenedor
-          recentBooksContainer.appendChild(div);
-        };
+        const div = document.createElement("div");
+        div.classList.add("recent-book");
+        div.style.height = "300px"; // Establecer altura estándar de 300px
+        
+        // Crear la imagen del libro reciente
+        const imgElement = document.createElement("img");
+        imgElement.src = book[2]; // URL de la portada del libro
+        imgElement.alt = `${book[0]} - ${book[1]}`;
+        div.appendChild(imgElement);
+        
+        // Agregar el libro reciente al contenedor
+        recentBooksContainer.appendChild(div);
       });
     })
     .catch(error => {
