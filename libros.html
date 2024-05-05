@@ -144,17 +144,21 @@
         background: rgba(217, 217, 217, 1);
         border-radius: 10px;
       }
-      .header-nav-icons-container {
-        display: flex;
-        flex: 0 0 auto;
-        flex-direction: row;
-        gap: 48px;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 25px;
-        margin-right: 19px;
-        margin-left: 19px;
-      }
+      .navigation-bar {
+    position: fixed;
+    bottom: 0;
+    width: auto;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: 48px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1px; /* Eliminar margen superior */
+    margin-right: 24px;
+    margin-left: 24px;
+    margin-bottom: 15px;
+}
       .vertical-menu-item {
         box-sizing: border-box;
         display: flex;
@@ -251,7 +255,7 @@
             <div class="search-container"></div>
             <div class="search-container2"></div>
           </div>
-          <div class="header-nav-icons-container">
+          <div class="navigation-bar">
             <div class="vertical-menu-item">
               <div class="svg-container2">
                 <svg viewBox="0 0 24 24" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
