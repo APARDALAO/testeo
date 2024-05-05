@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
 
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+    <script src="script.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <!--[if !mso]><!-->
@@ -340,141 +340,39 @@
         </div>
       </div>
     </div>
-  </body>
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Obtener y mostrar los libros existentes
-            fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
-                .then(response => response.json())
-                .then(data => {
-                    const bookList = document.getElementById("bookList");
-                    bookList.innerHTML = ""; // Limpiar la lista antes de agregar los libros
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
+          .then(response => response.json())
+          .then(data => {
+            const recentBooksContainer = document.getElementById("recentBooksContainer");
+            recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
 
-                    // Agregar libros existentes
-                    data.forEach(book => {
-                        const div = document.createElement("div");
-                        div.classList.add("book");
+            const recentBooks = data.slice(-6);
+            recentBooks.forEach(book => {
+              const div = document.createElement("div");
+              div.classList.add("recent-book");
 
-                        const img = document.createElement("img");
-                        img.src = book[2]; // URL de la portada del libro
-                        img.alt = `${book[0]} - ${book[1]}`;
-                        div.appendChild(img);
+              const img = document.createElement("img");
+              img.src = book[2]; // URL de la portada del libro
+              img.alt = `${book[0]} - ${book[1]}`;
+              div.appendChild(img);
 
-                        const title = document.createElement("p");
-                        title.classList.add("book-title");
-                        title.textContent = book[0];
-                        div.appendChild(title);
+              const title = document.createElement("p");
+              title.textContent = book[0];
+              div.appendChild(title);
 
-                        const author = document.createElement("p");
-                        author.classList.add("book-author");
-                        author.textContent = book[1];
-                        div.appendChild(author);
+              const author = document.createElement("p");
+              author.textContent = book[1];
+              div.appendChild(author);
 
-                        bookList.appendChild(div);
-                    });
-
-                    // Agregar libros recientes
-                    const recentBooksContainer = document.getElementById("recentBooksContainer");
-                    recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
-
-                    // Obtener los 6 libros más recientes
-                    const recentBooks = data.slice(-6);
-                    recentBooks.forEach(book => {
-                        const div = document.createElement("div");
-                        div.classList.add("recent-book");
-
-                        const img = document.createElement("img");
-                        img.src = book[2]; // URL de la portada del libro
-                        img.alt = `${book[0]} - ${book[1]}`;
-                        div.appendChild(img);
-
-                        const title = document.createElement("p");
-                        title.textContent = book[0];
-                        div.appendChild(title);
-
-                        const author = document.createElement("p");
-                        author.textContent = book[1];
-                        div.appendChild(author);
-
-                        recentBooksContainer.appendChild(div);
-                    });
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                });
-
-            // Evento para agregar un libro
-            document.getElementById("bookForm").addEventListener("submit", function(event) {
-                event.preventDefault(); // Evitar que el formulario se envíe normalmente
-
-                // Obtener los datos del formulario
-                const title = document.getElementById("title").value;
-                const author = document.getElementById("author").value;
-
-                // Verificar si el libro ya está en la lista
-                const books = document.querySelectorAll(".book");
-                let exists = false;
-                books.forEach(book => {
-                    const bookTitle = book.querySelector(".book-title").textContent.trim();
-                    const bookAuthor = book.querySelector(".book-author").textContent.replace("Autor: ", "").trim();
-                    if (bookTitle === title && bookAuthor === author) {
-                        exists = true;
-                        return;
-                    }
-                });
-
-                if (exists) {
-                    alert("Este libro ya está en la lista.");
-                    return;
-                }
-
-                // Crear objeto con los datos del libro
-                const data = {
-                    title: title,
-                    author: author
-                };
-
-                // Enviar los datos del libro al script de Google Apps Script
-                fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec", {
-                    method: "POST",
-                    body: JSON.stringify(data)
-                })
-                .then(response => response.text())
-                .then(message => {
-                    alert(message); // Mostrar mensaje de confirmación
-                    // Recargar la página para mostrar el nuevo libro agregado
-                    location.reload();
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    alert("Hubo un error al agregar el libro.");
-                });
+              recentBooksContainer.appendChild(div);
             });
-
-            // Evento para buscar libros
-            document.getElementById("searchInput").addEventListener("input", function() {
-                const searchTerm = this.value.trim().toLowerCase();
-                const books = document.querySelectorAll(".book");
-
-                books.forEach(book => {
-                    const title = book.querySelector(".book-title").textContent.trim().toLowerCase();
-                    const author = book.querySelector(".book-author").textContent.replace("Autor: ", "").trim().toLowerCase();
-
-                    if (title.includes(searchTerm) || author.includes(searchTerm)) {
-                        book.style.display = "flex";
-                    } else {
-                        book.style.display = "none";
-                    }
-                });
-            });
-
-            // Evento clic para la animación de la portada
-            document.querySelectorAll(".book").forEach(book => {
-                book.addEventListener("click", function() {
-                    this.classList.toggle("flipped");
-                });
-            });
-        });
+          })
+          .catch(error => {
+            console.error("Error fetching recent books:", error);
+          });
+      });
     </script>
-
+  </body>
 </html>
