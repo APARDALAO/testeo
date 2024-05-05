@@ -351,19 +351,19 @@
       const recentBooks = data.slice(-6); // Mostrar solo los tres libros más recientes
       
       // Encontrar el tamaño de la portada más pequeña
-      let minWidth = Infinity;
+      let minHeight = Infinity;
       recentBooks.forEach(book => {
         const img = new Image();
         img.src = book[2]; // URL de la portada del libro
         img.onload = function() {
-          const width = img.width;
-          if (width < minWidth) {
-            minWidth = width;
+          const height = img.height;
+          if (height < minHeight) {
+            minHeight = height;
           }
-          // Crear el div del libro reciente y establecer su ancho
+          // Crear el div del libro reciente y establecer su alto
           const div = document.createElement("div");
           div.classList.add("recent-book");
-          div.style.width = `${minWidth}px`;
+          div.style.height = `${minHeight}px`;
           
           // Crear la imagen del libro reciente
           const imgElement = document.createElement("img");
@@ -381,8 +381,6 @@
     });
 });
 
-
-
-</script>
+    </script>
   </body>
 </html>
