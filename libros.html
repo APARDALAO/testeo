@@ -157,17 +157,17 @@
       .search-container2 {
     box-sizing: border-box;
     flex: 0 0 auto;
-    height: 397px;
+    height: auto; /* Cambiado a auto para que el contenedor crezca según el contenido */
     background: rgba(217, 217, 217, 1);
     border-radius: 10px;
     overflow: hidden; /* Para ocultar contenido que se sale del contenedor */
+    padding: 20px; /* Añadido un padding para separar los libros del borde */
   }
 
   #bookList.book-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Cuadrícula responsiva de 3 columnas */
     gap: 20px;
-    padding: 20px;
     overflow: auto; /* Agregar barras de desplazamiento si el contenido excede el tamaño del contenedor */
   }
 
