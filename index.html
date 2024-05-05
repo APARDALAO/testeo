@@ -174,12 +174,17 @@
     overflow: hidden; /* Para ocultar cualquier desbordamiento */
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Utilizar flexbox para alinear los elementos internos */
+    justify-content: center; /* Centrar la imagen horizontalmente */
+    align-items: center; /* Centrar la imagen verticalmente */
   }
   .recent-book img {
     width: 100%;
     height: auto;
     max-width: 100%; /* Establecer un ancho máximo para la imagen */
     display: block;
+    max-width: 100%; /* La imagen no será más ancha que el contenedor */
+    max-height: 100%; /* La imagen no será más alta que el contenedor */
   }
       .navigation-bar {
     position: fixed;
