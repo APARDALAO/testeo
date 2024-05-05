@@ -273,7 +273,9 @@
   <input type="text" class="search-input" placeholder="Busca libros, autores o carpetas" />
 </div>
             <div class="search-container"></div>
-            <div class="search-container2"></div>
+            <div class="search-container2"><div id="bookList" class="book-grid">
+    <!-- Aquí se mostrarán los libros existentes -->
+  </div></div>
           </div>
           <div class="navigation-bar">
             <div onclick="window.location.href='https://apardalao.github.io/testeo';" class="vertical-menu-item">
@@ -320,5 +322,41 @@
         </div>
       </div>
     </div>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Obtener y mostrar los libros existentes
+    fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
+      .then(response => response.json())
+      .then(data => {
+        const bookList = document.getElementById("bookList");
+        bookList.innerHTML = ""; // Limpiar la lista antes de agregar los libros
+        data.forEach(book => {
+          const div = document.createElement("div");
+          div.classList.add("book");
+
+          const img = document.createElement("img");
+          img.src = book[2]; // URL de la portada del libro
+          img.alt = `${book[0]} - ${book[1]}`;
+          div.appendChild(img);
+
+          const title = document.createElement("p");
+          title.classList.add("book-title");
+          title.textContent = book[0];
+          div.appendChild(title);
+
+          const author = document.createElement("p");
+          author.classList.add("book-author");
+          author.textContent = book[1];
+          div.appendChild(author);
+
+          bookList.appendChild(div);
+        });
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  });
+</script>
+
 <div class="white-div"></div>  </body>
 </html>
