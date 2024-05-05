@@ -166,13 +166,14 @@
 
   #bookList.book-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Cuadrícula responsiva de 3 columnas */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Cuadrícula responsiva */
     gap: 20px;
     overflow: auto; /* Agregar barras de desplazamiento si el contenido excede el tamaño del contenedor */
   }
 
   .book {
     text-align: center;
+    width: calc(33.33% - 20px); /* Ancho del libro con un margen de 20px */
   }
 
   .book img {
