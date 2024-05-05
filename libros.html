@@ -172,8 +172,15 @@
   }
 
   .book {
-    text-align: center;
-    width: calc(33.33% - 20px); /* Ancho del libro con un margen de 20px */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+            background-color: #ffffff;
+          	text-align: left; /* Alinea todo el texto a la izquierda */
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
   }
 
   .book img {
