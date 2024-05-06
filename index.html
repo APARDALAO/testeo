@@ -289,6 +289,36 @@
         user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
         cursor: default; /* Cambiar el cursor para indicar que el texto no es seleccionable */
     }
+.ladobar {
+		display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        margin-top: 41px;
+}
+.librobar {
+		box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: 375px;
+        padding: 37px 20px 8px;
+        background: rgba(255, 255, 255, 1);
+}
+.casabar {
+	margin-bottom: 0;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        border: 0;
+}
+
     </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -323,7 +353,15 @@
             </div>
             <div class="file-list-container1" id="recentBooksContainer"></div>
           </div>
-          <div class="navigation-bar">
+          
+        </div>
+      </div>
+    </div>
+	
+	<div class="casabar">
+	<div class="librobar">
+	<div class="ladobar">
+	<div class="navigation-bar">
             <div class="vertical-flexbox-menu-item">
               <div class="svg-container1">
                 <svg viewBox="0 0 24 24" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -364,10 +402,7 @@
               </div>
               <p class="settings-text no-copiable">Ajustes</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </div></div></div></div>
     <script>
   document.addEventListener("DOMContentLoaded", function() {
   fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
