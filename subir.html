@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500" />
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      div {
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
+      }
+      p {
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
+      }
+      .book-upload-menu {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      width: 375px;
+      padding: 24px 14px 8px;
+      background: rgba(255, 255, 255, 1);
+      }
+      .upload-book-button-container1 {
+      flex: 0 0 auto;
+      }
+      .book-upload-container {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      width: 100%;
+      padding-right: 9px;
+      padding-left: 9px;
+      margin-bottom: 15px;
+      }
+      .book-upload-heading {
+      flex: 0 0 auto;
+      font: 500 24px/29px Inter, sans-serif;
+      color: rgba(55, 65, 81, 1);
+      white-space: pre-wrap;
+      }
+      .upload-book-button-container {
+      flex: 0 0 auto;
+      padding-right: 5px;
+      padding-left: 5px;
+      margin-top: -47px;
+      }
+      .white-box {
+      box-sizing: border-box;
+      width: 144px;
+      height: 64px;
+      background: rgba(255, 255, 255, 1);
+      }
+      .vertical-button-container {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: stretch;
+      justify-content: flex-start;
+      width: 100%;
+      }
+      .card-container1 {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      height: 44px;
+      background: rgba(236, 236, 236, 1);
+      border-radius: 10px;
+      }
+      .header-container {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      height: 51px;
+      background: rgba(236, 236, 236, 1);
+      border-radius: 10px;
+      }
+      .card-container {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      height: 190px;
+      background: rgba(236, 236, 236, 1);
+      border-radius: 10px;
+      }
+      .blue-rounded-header {
+      box-sizing: border-box;
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      justify-content: center;
+      min-width: 268px;
+      height: 58px;
+      font: 700 13px/15.5px Inter, sans-serif;
+      color: rgba(255, 255, 255, 1);
+      cursor: pointer;
+      background: rgba(7, 145, 248, 1);
+      border: none;
+      border-radius: 30px;
+      margin-top: 40px;
+      margin-left: 35px; /* Márgen izquierdo */
+      margin-right: 35px; /* Márgen derecho */
+      }
+      .navbar-menu-options {
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+      gap: 48px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 59px;
+      margin-right: 25px;
+      margin-left: 25px;
+      }
+      .vertical-menu-item {
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      width: 38px;
+      }
+      .svg-container1 {
+      display: flex;
+      flex: 0 0 auto;
+      align-self: center;
+      width: 24px;
+      height: 24px;
+      color: rgba(55, 65, 81, 1);
+      }
+      .menu-title-text-style {
+      flex: 0 0 auto;
+      margin-top: 3.25px;
+      font: 400 9px/11px Inter, sans-serif;
+      color: rgba(55, 65, 81, 1);
+      text-align: center;
+      white-space: pre-wrap;
+      }
+      .svg-container2 {
+      display: flex;
+      flex: 0 0 auto;
+      align-self: center;
+      width: 24px;
+      height: 24px;
+      color: rgba(7, 145, 248, 1);
+      }
+      .subir-text-styler {
+      flex: 0 0 auto;
+      margin-top: 3.25px;
+      font: 400 9px/11px Inter, sans-serif;
+      color: rgba(7, 145, 248, 1);
+      text-align: center;
+      white-space: pre-wrap;
+      }
+      .vertical-center-text {
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      }
+      .svg-container3 {
+      display: flex;
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      color: rgba(55, 65, 81, 1);
+      }
+      .settings-text {
+      flex: 0 0 auto;
+      margin-top: 3.25px;
+      font: 400 9px/11px Inter, sans-serif;
+      color: rgba(55, 65, 81, 1);
+      white-space: pre-wrap;
+      }
+      .button-with-icon {
+      box-sizing: border-box;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      min-width: 347px;
+      height: 44px;
+      font: 400 13px/15.5px Inter, sans-serif;
+      color: rgba(156, 163, 175, 1);
+      cursor: pointer;
+      background: rgba(236, 236, 236, 1);
+      border: none;
+      border-radius: 10px;
+      }
+      .svg-container {
+      display: flex;
+      width: 16px;
+      height: 16px;
+      color: rgba(166, 172, 182, 1);
+      }
+      .navigation-bar {
+      position: fixed;
+      bottom: 0;
+      width: auto;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+      gap: 48px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1px; /* Eliminar margen superior */
+      margin-right: 24px;
+      margin-left: 24px;
+      margin-bottom: 15px;
+      z-index: 1;
+      }
+      .item1 {
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      width: 38px;
+      }
+      .svg1 {
+      display: flex;
+      flex: 0 0 auto;
+      align-self: center;
+      width: 24px;
+      height: 24px;
+      color: rgba(7, 145, 248, 1);
+      }
+      .menutitle {
+      flex: 0 0 auto;
+      margin-top: 3.25px;
+      font: 400 9px/11px Inter, sans-serif;
+      color: rgba(7, 145, 248, 1);
+      text-align: center;
+      white-space: pre-wrap;
+      }
+      .svg2 {
+      display: flex;
+      flex: 0 0 auto;
+      align-self: center;
+      width: 24px;
+      height: 24px;
+      color: rgba(55, 65, 81, 1);
+      }
+      .searchbutton {
+      flex: 0 0 auto;
+      margin-top: 3.25px;
+      font: 400 9px/11px Inter, sans-serif;
+      color: rgba(55, 65, 81, 1);
+      text-align: center;
+      white-space: pre-wrap;
+      }
+      .verticaltext {
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      }
+      .svg3 {
+      display: flex;
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      color: rgba(55, 65, 81, 1);
+      }
+      .ajustestext {
+      flex: 0 0 auto;
+      margin-top: 3.25px;
+      font: 400 9px/11px Inter, sans-serif;
+      color: rgba(55, 65, 81, 1);
+      white-space: pre-wrap;
+      }
+      .no-copiable {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+      cursor: default; /* Cambiar el cursor para indicar que el texto no es seleccionable */
+      }
+      .ladobar {
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      margin-top: 41px;
+      }
+      .librobar {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      width: 375px;
+      padding: 37px 20px 8px;
+      background: rgba(255, 255, 255, 1);
+      }
+      .casabar {
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
+      }
+      .white-div {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 63px;
+      background-color: white;
+      z-index: 0; /* Ajusta el z-index para que esté detrás del navigation bar */
+      }
+      .search-container {
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      height: 40px;
+      margin-top: 15px;
+      background: rgba(236, 236, 236, 1);
+      border-radius: 12px;
+      padding-left: 12px; /* Ajusta el padding izquierdo para el icono */
+      }
+      .search-container33 {
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      height: 190px;
+      margin-top: 15px;
+      background: rgba(236, 236, 236, 1);
+      border-radius: 12px;
+      padding-left: 12px; /* Ajusta el padding izquierdo para el icono */
+      }
+      .svg-container {
+      display: flex;
+      flex: 0 0 auto;
+      width: 14px;
+      height: 24px;
+      color: rgba(156, 163, 175, 1);
+      }
+      .search-input {
+      flex: 1; /* El input ocupará todo el espacio restante */
+      margin-left: 9px; /* Ajusta el margen izquierdo */
+      font: 400 13px/15.5px Inter, sans-serif;
+      color: rgba(156, 163, 175, 1);
+      background: transparent; /* Fondo transparente */
+      border: none; /* Sin borde */
+      outline: none; /* Sin contorno al enfocar */
+      }
+      .search-input::placeholder {
+      color: rgba(156, 163, 175, 1); /* Color del texto de marcador de posición */
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: inline-block; width: 375px;" data-ignore="used only for top most containter width">
+      <div class="book-upload-menu">
+        <div class="upload-book-button-container1">
+          <div class="book-upload-container">
+            <p class="book-upload-heading">Subir un libro</p>
+          </div>
+          <div class="vertical-button-container">
+            <form id="bookForm">
+              <div class="search-container">
+                <div class="svg-container">
+                  <svg viewBox="0 0 16 16" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" data-node-id="73:149" d="M6.5,16v-13h-5.5v-3h14v3h-5.5v13z" fill="currentColor" xmlns="http://www.w3.org/2000/svg" ></path>
+                  </svg>
+                </div>
+                <input type="text" id="title" name="title" class="search-input" placeholder="Título" required/>
+              </div>
+              <div class="search-container">
+                <div class="svg-container">
+                  <svg viewBox="0 0 16 16" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Vector" data-node-id="73:149" d="M6.5,16v-13h-5.5v-3h14v3h-5.5v13z" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></path>
+                  </svg>
+                </div>
+                <input type="text" id="author" name="author" class="search-input" placeholder="Autor" required>
+              </div>
+              <div class="search-container">
+                <input id="ubicacion" type="text" class="search-input" placeholder="Ubicación" />
+              </div>
+              <div class="search-container33">
+                <input id="ubicacion" type="text" class="search-input" placeholder="Portada" />
+              </div>
+              <div class="search-container">
+                <input id="ubicacion" type="text" class="search-input" placeholder="Carpeta" />
+              </div>
+              <button class="blue-rounded-header" type="submit">Agregar Libro</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          // Obtener y mostrar los libros existentes
+          fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
+              .then(response => response.json())
+              .then(data => {
+                  const bookList = document.getElementById("bookList");
+                  bookList.innerHTML = ""; // Limpiar la lista antes de agregar los libros
+      
+                  data.forEach(book => {
+                      const div = document.createElement("div");
+                      div.classList.add("book");
+      
+                      const img = document.createElement("img");
+                      img.src = book[2]; // URL de la portada del libro
+                      img.alt = `${book[0]} - ${book[1]}`;
+                      div.appendChild(img);
+      
+                      const title = document.createElement("p");
+                      title.classList.add("book-title");
+                      title.textContent = book[0];
+                      div.appendChild(title);
+      
+                      const sectionNumber = document.createElement("span");
+                      sectionNumber.classList.add("section-number");
+                      sectionNumber.textContent = book[3]; // Número de sección
+                      div.appendChild(sectionNumber);
+      
+                      const author = document.createElement("p");
+                      author.classList.add("book-author");
+                      author.textContent = book[1];
+                      div.appendChild(author);
+      
+                      bookList.appendChild(div);
+                  });
+              })
+              .catch(error => {
+                  console.error("Error:", error);
+              });
+      
+          // Evento para agregar un libro
+          document.getElementById("bookForm").addEventListener("submit", function(event) {
+              event.preventDefault(); // Evitar que el formulario se envíe normalmente
+      
+              // Obtener los datos del formulario
+              const title = document.getElementById("title").value;
+              const author = document.getElementById("author").value;
+      
+              // Verificar si el libro ya está en la lista
+              const books = document.querySelectorAll(".book");
+              let exists = false;
+              books.forEach(book => {
+                  const bookTitle = book.querySelector(".book-title").textContent.trim();
+                  const bookAuthor = book.querySelector(".book-author").textContent.replace("Autor: ", "").trim();
+                  if (bookTitle === title && bookAuthor === author) {
+                      exists = true;
+                      return;
+                  }
+              });
+      
+              if (exists) {
+                  alert("Este libro ya está en la lista.");
+                  return;
+              }
+      
+              // Crear objeto con los datos del libro
+              const data = {
+                  title: title,
+                  author: author
+              };
+      
+              // Enviar los datos del libro al script de Google Apps Script
+              fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec", {
+                  method: "POST",
+                  body: JSON.stringify(data)
+              })
+              .then(response => response.text())
+              .then(message => {
+                  alert(message); // Mostrar mensaje de confirmación
+                  // Recargar la página para mostrar el nuevo libro agregado
+                  location.reload();
+              })
+              .catch(error => {
+                  console.error("Error:", error);
+                  alert("Hubo un error al agregar el libro.");
+              });
+          });
+      
+          // Evento para buscar libros
+          document.getElementById("searchInput").addEventListener("input", function() {
+              const searchTerm = this.value.trim().toLowerCase();
+              const books = document.querySelectorAll(".book");
+      
+              books.forEach(book => {
+                  const title = book.querySelector(".book-title").textContent.trim().toLowerCase();
+                  const author = book.querySelector(".book-author").textContent.replace("Autor: ", "").trim().toLowerCase();
+      
+                  if (title.includes(searchTerm) || author.includes(searchTerm)) {
+                      book.style.display = "flex";
+                  } else {
+                      book.style.display = "none";
+                  }
+              });
+          });
+      
+          // Evento clic para la animación de la portada
+          document.querySelectorAll(".book").forEach(book => {
+              book.addEventListener("click", function() {
+                  this.classList.toggle("flipped");
+              });
+          });
+      });
+    </script>
+  </body>
+</html>
