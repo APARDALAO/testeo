@@ -2,326 +2,312 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600" />
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700" />
-
     <meta charset="UTF-8" />
-
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="script.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
     <!--[if !mso]><!-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--<![endif]-->
-
     <meta name="x-apple-disable-message-reformatting" />
-
     <style>
       div {
-        margin-bottom: 0;
-        margin-top: 0;
-        margin-left: 0;
-        margin-right: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-        border: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
       }
       p {
-        margin-bottom: 0;
-        margin-top: 0;
-        margin-left: 0;
-        margin-right: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-        border: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
       }
-
       .content-panel {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        gap: 52px;
-        align-items: stretch;
-        justify-content: flex-start;
-        width: 375px;
-        padding: 42px 15px 8px;
-        background: rgba(255, 255, 255, 1);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 52px;
+      align-items: stretch;
+      justify-content: flex-start;
+      width: 375px;
+      padding: 42px 15px 8px;
+      background: rgba(255, 255, 255, 1);
       }
       .library-search-container {
-        display: flex;
-        flex: 0 0 auto;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
       }
       .library-header-container {
-        display: flex;
-        flex: 0 0 auto;
-        flex-direction: row;
-        align-items: flex-start;
-        align-self: center;
-        justify-content: flex-start;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+      align-items: flex-start;
+      align-self: center;
+      justify-content: flex-start;
       }
       .bibliophile-style {
-        flex: 0 0 auto;
-        padding-top: 5.5px;
-        padding-bottom: 17.5px;
-        font: 400 48px/58px "Istok Web", sans-serif;
-        color: rgba(55, 65, 81, 1);
-        white-space: pre-wrap;
+      flex: 0 0 auto;
+      padding-top: 5.5px;
+      padding-bottom: 17.5px;
+      font: 400 48px/58px "Istok Web", sans-serif;
+      color: rgba(55, 65, 81, 1);
+      white-space: pre-wrap;
       }
       .bibli-image {
-        box-sizing: border-box;
-        display: block;
-        width: 53px;
-        max-width: initial;
-        height: 53px;
-        margin-left: 8.5px;
+      box-sizing: border-box;
+      display: block;
+      width: 53px;
+      max-width: initial;
+      height: 53px;
+      margin-left: 8.5px;
       }
       .blue-heading {
-        flex: 0 0 auto;
-        padding-top: 23px;
-        margin-left: -1.5px;
-        font: 700 48px/58px "Istok Web", sans-serif;
-        color: rgba(7, 145, 248, 1);
-        white-space: pre-wrap;
+      flex: 0 0 auto;
+      padding-top: 23px;
+      margin-left: -1.5px;
+      font: 700 48px/58px "Istok Web", sans-serif;
+      color: rgba(7, 145, 248, 1);
+      white-space: pre-wrap;
       }
       .search-container {
-  box-sizing: border-box;
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  height: 40px;
-  margin-top: 23px;
-  background: rgba(236, 236, 236, 1);
-  border-radius: 12px;
-  padding-left: 12px; /* Ajusta el padding izquierdo para el icono */
-}
-
-.svg-container {
-  display: flex;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  color: rgba(156, 163, 175, 1);
-}
-
-.search-input {
-  flex: 1; /* El input ocupará todo el espacio restante */
-  margin-left: 9px; /* Ajusta el margen izquierdo */
-  font: 400 13px/15.5px Inter, sans-serif;
-  color: rgba(156, 163, 175, 1);
-  background: transparent; /* Fondo transparente */
-  border: none; /* Sin borde */
-  outline: none; /* Sin contorno al enfocar */
-}
-
-.search-input::placeholder {
-  color: rgba(156, 163, 175, 1); /* Color del texto de marcador de posición */
-}
-
-
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      height: 40px;
+      margin-top: 23px;
+      background: rgba(236, 236, 236, 1);
+      border-radius: 12px;
+      padding-left: 12px; /* Ajusta el padding izquierdo para el icono */
+      }
+      .svg-container {
+      display: flex;
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      color: rgba(156, 163, 175, 1);
+      }
+      .search-input {
+      flex: 1; /* El input ocupará todo el espacio restante */
+      margin-left: 9px; /* Ajusta el margen izquierdo */
+      font: 400 13px/15.5px Inter, sans-serif;
+      color: rgba(156, 163, 175, 1);
+      background: transparent; /* Fondo transparente */
+      border: none; /* Sin borde */
+      outline: none; /* Sin contorno al enfocar */
+      }
+      .search-input::placeholder {
+      color: rgba(156, 163, 175, 1); /* Color del texto de marcador de posición */
+      }
       .search-prompt-text-style {
-        flex: 0 0 auto;
-        margin-left: 9px;
-        font: 400 13px/15.5px Inter, sans-serif;
-        color: rgba(156, 163, 175, 1);
-        white-space: pre-wrap;
+      flex: 0 0 auto;
+      margin-left: 9px;
+      font: 400 13px/15.5px Inter, sans-serif;
+      color: rgba(156, 163, 175, 1);
+      white-space: pre-wrap;
       }
       .file-thumbnail {
-        box-sizing: border-box;
-        display: block;
-        flex: 0 0 auto;
-        align-self: center;
-        width: 164px;
-        max-width: initial;
-        height: 164px;
+      box-sizing: border-box;
+      display: block;
+      flex: 0 0 auto;
+      align-self: center;
+      width: 164px;
+      max-width: initial;
+      height: 164px;
       }
       .file-list-container {
-        display: flex;
-        flex: 0 0 auto;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-        margin-top: -6px;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      margin-top: -6px;
       }
       .file-list-container2 {
-        flex: 0 0 auto;
+      flex: 0 0 auto;
       }
       .file-options-bar {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        gap: 8px;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
       }
       .recent-files-heading {
-        flex: 0 0 auto;
-        font: 600 13px/15.5px Inter, sans-serif;
-        color: rgba(55, 65, 81, 1);
-        white-space: pre-wrap;
+      flex: 0 0 auto;
+      font: 600 13px/15.5px Inter, sans-serif;
+      color: rgba(55, 65, 81, 1);
+      white-space: pre-wrap;
       }
       .recent-files-link {
-        flex: 0 0 auto;
-        font: 400 13px/15.5px Inter, sans-serif;
-        color: rgba(10, 123, 204, 1);
-        white-space: pre-wrap;
+      flex: 0 0 auto;
+      font: 400 13px/15.5px Inter, sans-serif;
+      color: rgba(10, 123, 204, 1);
+      white-space: pre-wrap;
       }
       .file-list-container1 {
-    margin-top: 20px;
-    display: flex;
-    overflow-x: auto; /* Para permitir desplazamiento horizontal si los libros no caben en la pantalla */
-    -ms-overflow-style: none; /* Para IE y Edge */
-    scrollbar-width: none; /* Para Firefox */
-  }
-  .file-list-container1::-webkit-scrollbar {
-    display: none; /* Ocultar la barra de desplazamiento en WebKit (Chrome, Safari, etc.) */
-  }
-  .recent-book {
-    flex: 0 0 calc(33.33% - 10px);
-    margin-right: 10px;
-    overflow: hidden; /* Para ocultar cualquier desbordamiento */
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex; /* Utilizar flexbox para alinear los elementos internos */
-    justify-content: center; /* Centrar la imagen horizontalmente */
-    align-items: center; /* Centrar la imagen verticalmente */
-  }
-  .recent-book img {
-    width: 100%;
-    max-width: 100%; /* Establecer un ancho máximo para la imagen */
-    display: block;
-    max-width: 100%; /* La imagen no será más ancha que el contenedor */
-    max-height: 100%; /* La imagen no será más alta que el contenedor */
-  }
+      margin-top: 20px;
+      display: flex;
+      overflow-x: auto; /* Para permitir desplazamiento horizontal si los libros no caben en la pantalla */
+      -ms-overflow-style: none; /* Para IE y Edge */
+      scrollbar-width: none; /* Para Firefox */
+      }
+      .file-list-container1::-webkit-scrollbar {
+      display: none; /* Ocultar la barra de desplazamiento en WebKit (Chrome, Safari, etc.) */
+      }
+      .recent-book {
+      flex: 0 0 calc(33.33% - 10px);
+      margin-right: 10px;
+      overflow: hidden; /* Para ocultar cualquier desbordamiento */
+      border-radius: 8px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex; /* Utilizar flexbox para alinear los elementos internos */
+      justify-content: center; /* Centrar la imagen horizontalmente */
+      align-items: center; /* Centrar la imagen verticalmente */
+      }
+      .recent-book img {
+      width: 100%;
+      max-width: 100%; /* Establecer un ancho máximo para la imagen */
+      display: block;
+      max-width: 100%; /* La imagen no será más ancha que el contenedor */
+      max-height: 100%; /* La imagen no será más alta que el contenedor */
+      }
       .navigation-bar {
-    position: fixed;
-    bottom: 0;
-    width: auto;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: row;
-    gap: 48px;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1px; /* Eliminar margen superior */
-    margin-right: 24px;
-    margin-left: 24px;
-    margin-bottom: 15px;
-    z-index: 1;
-}
-     .item1 {
-        box-sizing: border-box;
-        display: flex;
-        flex: 0 0 auto;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: center;
-        width: 38px;
+      position: fixed;
+      bottom: 0;
+      width: auto;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+      gap: 48px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1px; /* Eliminar margen superior */
+      margin-right: 24px;
+      margin-left: 24px;
+      margin-bottom: 15px;
+      z-index: 1;
+      }
+      .item1 {
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      width: 38px;
       }
       .svg1 {
-        display: flex;
-        flex: 0 0 auto;
-        align-self: center;
-        width: 24px;
-        height: 24px;
-        color: rgba(7, 145, 248, 1);
+      display: flex;
+      flex: 0 0 auto;
+      align-self: center;
+      width: 24px;
+      height: 24px;
+      color: rgba(7, 145, 248, 1);
       }
       .menutitle {
-        flex: 0 0 auto;
-        margin-top: 3.25px;
-        font: 400 9px/11px Inter, sans-serif;
-        color: rgba(7, 145, 248, 1);
-        text-align: center;
-        white-space: pre-wrap;
+      flex: 0 0 auto;
+      margin-top: 3.25px;
+      font: 400 9px/11px Inter, sans-serif;
+      color: rgba(7, 145, 248, 1);
+      text-align: center;
+      white-space: pre-wrap;
       }
       .svg2 {
-        display: flex;
-        flex: 0 0 auto;
-        align-self: center;
-        width: 24px;
-        height: 24px;
-        color: rgba(55, 65, 81, 1);
+      display: flex;
+      flex: 0 0 auto;
+      align-self: center;
+      width: 24px;
+      height: 24px;
+      color: rgba(55, 65, 81, 1);
       }
       .searchbutton {
-        flex: 0 0 auto;
-        margin-top: 3.25px;
-        font: 400 9px/11px Inter, sans-serif;
-        color: rgba(55, 65, 81, 1);
-        text-align: center;
-        white-space: pre-wrap;
+      flex: 0 0 auto;
+      margin-top: 3.25px;
+      font: 400 9px/11px Inter, sans-serif;
+      color: rgba(55, 65, 81, 1);
+      text-align: center;
+      white-space: pre-wrap;
       }
       .verticaltext {
-        display: flex;
-        flex: 0 0 auto;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       }
       .svg3 {
-        display: flex;
-        flex: 0 0 auto;
-        width: 24px;
-        height: 24px;
-        color: rgba(55, 65, 81, 1);
+      display: flex;
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      color: rgba(55, 65, 81, 1);
       }
       .ajustestext {
-        flex: 0 0 auto;
-        margin-top: 3.25px;
-        font: 400 9px/11px Inter, sans-serif;
-        color: rgba(55, 65, 81, 1);
-        white-space: pre-wrap;
+      flex: 0 0 auto;
+      margin-top: 3.25px;
+      font: 400 9px/11px Inter, sans-serif;
+      color: rgba(55, 65, 81, 1);
+      white-space: pre-wrap;
       }
       .no-copiable {
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-        cursor: default; /* Cambiar el cursor para indicar que el texto no es seleccionable */
-    }
-.ladobar {
-		display: flex;
-        flex: 0 0 auto;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-        margin-top: 41px;
-}
-.librobar {
-		box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-        width: 375px;
-        padding: 37px 20px 8px;
-        background: rgba(255, 255, 255, 1);
-}
-.casabar {
-	margin-bottom: 0;
-        margin-top: 0;
-        margin-left: 0;
-        margin-right: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-        border: 0;
-}
-
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+      cursor: default; /* Cambiar el cursor para indicar que el texto no es seleccionable */
+      }
+      .ladobar {
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      margin-top: 41px;
+      }
+      .librobar {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      width: 375px;
+      padding: 37px 20px 8px;
+      background: rgba(255, 255, 255, 1);
+      }
+      .casabar {
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
+      }
     </style>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
@@ -334,16 +320,15 @@
             <p class="blue-heading">S</p>
           </div>
           <div class="search-container">
-  <div class="svg-container">
-    <svg viewBox="0 0 24 24" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g id="Component 2" data-node-id="4:605" xmlns="http://www.w3.org/2000/svg">
-        <path id="Vector" data-node-id="I4:605;11:257" d="M10.25,3c-3.9952,0 -7.25,3.255 -7.25,7.25c0,3.995 3.2548,7.25 7.25,7.25c1.7282,0 3.3169,-0.61 4.5645,-1.625l4.9052,4.905c0.0691,0.072 0.1519,0.13 0.2435,0.169c0.0916,0.04 0.1902,0.061 0.29,0.062c0.0997,0.001 0.1987,-0.018 0.2911,-0.056c0.0924,-0.038 0.1763,-0.093 0.2469,-0.164c0.0705,-0.07 0.1263,-0.154 0.164,-0.247c0.0377,-0.092 0.0566,-0.191 0.0556,-0.291c-0.001,-0.1 -0.0219,-0.198 -0.0615,-0.29c-0.0396,-0.091 -0.097,-0.174 -0.169,-0.243l-4.9053,-4.906c1.0145,-1.247 1.625,-2.836 1.625,-4.564c0,-3.995 -3.2548,-7.25 -7.25,-7.25zM10.25,4.5c3.1845,0 5.75,2.565 5.75,5.75c0,1.551 -0.6119,2.953 -1.6045,3.985c-0.0612,0.045 -0.1152,0.099 -0.1601,0.161c-1.0325,0.992 -2.4341,1.604 -3.9854,1.604c-3.1845,0 -5.75,-2.565 -5.75,-5.75c0,-3.185 2.5655,-5.75 5.75,-5.75z" fill="currentColor" />
-      </g>
-    </svg>
-  </div>
-  <input type="text" class="search-input" placeholder="Busca libros, autores o carpetas" />
-</div>
-
+            <div class="svg-container">
+              <svg viewBox="0 0 24 24" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Component 2" data-node-id="4:605" xmlns="http://www.w3.org/2000/svg">
+                  <path id="Vector" data-node-id="I4:605;11:257" d="M10.25,3c-3.9952,0 -7.25,3.255 -7.25,7.25c0,3.995 3.2548,7.25 7.25,7.25c1.7282,0 3.3169,-0.61 4.5645,-1.625l4.9052,4.905c0.0691,0.072 0.1519,0.13 0.2435,0.169c0.0916,0.04 0.1902,0.061 0.29,0.062c0.0997,0.001 0.1987,-0.018 0.2911,-0.056c0.0924,-0.038 0.1763,-0.093 0.2469,-0.164c0.0705,-0.07 0.1263,-0.154 0.164,-0.247c0.0377,-0.092 0.0566,-0.191 0.0556,-0.291c-0.001,-0.1 -0.0219,-0.198 -0.0615,-0.29c-0.0396,-0.091 -0.097,-0.174 -0.169,-0.243l-4.9053,-4.906c1.0145,-1.247 1.625,-2.836 1.625,-4.564c0,-3.995 -3.2548,-7.25 -7.25,-7.25zM10.25,4.5c3.1845,0 5.75,2.565 5.75,5.75c0,1.551 -0.6119,2.953 -1.6045,3.985c-0.0612,0.045 -0.1152,0.099 -0.1601,0.161c-1.0325,0.992 -2.4341,1.604 -3.9854,1.604c-3.1845,0 -5.75,-2.565 -5.75,-5.75c0,-3.185 2.5655,-5.75 5.75,-5.75z" fill="currentColor" />
+                </g>
+              </svg>
+            </div>
+            <input type="text" class="search-input" placeholder="Busca libros, autores o carpetas" />
+          </div>
         </div>
         <img src="logogrande.svg" class="file-thumbnail" />
         <div class="file-list-container">
@@ -354,15 +339,13 @@
             </div>
             <div class="file-list-container1" id="recentBooksContainer"></div>
           </div>
-          
         </div>
       </div>
     </div>
-	
-	<div class="casabar" style="display: inline-block; width: 375px" data-ignore="used only for top most containter width">
-	<div class="librobar">
-	<div class="ladobar">
-	<div class="navigation-bar">
+    <div class="casabar" style="display: inline-block; width: 375px" data-ignore="used only for top most containter width">
+      <div class="librobar">
+        <div class="ladobar">
+          <div class="navigation-bar">
             <div class="item1">
               <div class="svg1">
                 <svg viewBox="0 0 24 24" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -403,38 +386,42 @@
               </div>
               <p class="ajustestext no-copiable">Ajustes</p>
             </div>
-          </div></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
-  document.addEventListener("DOMContentLoaded", function() {
-  fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
-    .then(response => response.json())
-    .then(data => {
-      const recentBooksContainer = document.getElementById("recentBooksContainer");
-      recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
-
-      const recentBooks = data.slice(-7); // Mostrar solo los tres libros más recientes
+      document.addEventListener("DOMContentLoaded", function() {
+      fetch("https://script.google.com/macros/s/AKfycbxfXykxhFJ1NoIgJIF1u06j69fNcNHIQLstRMbniTkUgUNiQxpsCantFMWMZYOxypR5LA/exec")
+        .then(response => response.json())
+        .then(data => {
+          const recentBooksContainer = document.getElementById("recentBooksContainer");
+          recentBooksContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar libros recientes
       
-      // Crear el div del libro reciente y establecer su tamaño estándar
-      recentBooks.forEach(book => {
-        const div = document.createElement("div");
-        div.classList.add("recent-book");
-        div.style.height = "150px"; // Establecer altura estándar de 300px
-        
-        // Crear la imagen del libro reciente
-        const imgElement = document.createElement("img");
-        imgElement.src = book[2]; // URL de la portada del libro
-        imgElement.alt = `${book[0]} - ${book[1]}`;
-        div.appendChild(imgElement);
-        
-        // Agregar el libro reciente al contenedor
-        recentBooksContainer.appendChild(div);
+          const recentBooks = data.slice(-7); // Mostrar solo los tres libros más recientes
+          
+          // Crear el div del libro reciente y establecer su tamaño estándar
+          recentBooks.forEach(book => {
+            const div = document.createElement("div");
+            div.classList.add("recent-book");
+            div.style.height = "150px"; // Establecer altura estándar de 300px
+            
+            // Crear la imagen del libro reciente
+            const imgElement = document.createElement("img");
+            imgElement.src = book[2]; // URL de la portada del libro
+            imgElement.alt = `${book[0]} - ${book[1]}`;
+            div.appendChild(imgElement);
+            
+            // Agregar el libro reciente al contenedor
+            recentBooksContainer.appendChild(div);
+          });
+        })
+        .catch(error => {
+          console.error("Error fetching recent books:", error);
+        });
       });
-    })
-    .catch(error => {
-      console.error("Error fetching recent books:", error);
-    });
-});
-
+      
+        
     </script>
   </body>
 </html>
